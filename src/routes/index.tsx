@@ -77,7 +77,7 @@ type Section = {
   links: LinkItem[];
 };
 
-const SECTIONS: Section[] = [
+export const SECTIONS: Section[] = [
   {
     label: "01 — Build",
     delay: 200,
@@ -116,7 +116,7 @@ const SECTIONS: Section[] = [
 
 function Index() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+    <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* Ambient background */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <div className="absolute -left-24 -top-24 size-[420px] rounded-full bg-sky-400/20 blur-[110px] animate-drift" />
@@ -172,7 +172,7 @@ function Index() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl bg-glass/40 px-3 py-3 ring-1 ring-white/10 backdrop-blur-xl transition-colors duration-200 hover:bg-glass/70 hover:ring-accent/40"
+                  className="group flex items-center gap-3 rounded-2xl bg-glass/40 px-3 py-3 ring-1 ring-white/10 backdrop-blur-xl transition-colors duration-200 hover:bg-glass/70 hover:ring-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-background/60 ring-1 ring-white/10">
                     <BrandMark icon={link.icon} name={link.name} className="size-4.5" />

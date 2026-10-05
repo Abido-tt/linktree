@@ -11,3 +11,4 @@
 
 - Use Lovable Assets JSON pointers for uploaded profile images; this keeps uploaded media out of the source repository.
 - Keep custom multicolor brand icons in the link page and their color tokens in global CSS so logos retain their recognizable appearance.
+- Keep identity decorations in a separate, aria-hidden presentation component with CSS-only motion; decorative details must not affect link navigation or keyboard focus.
