@@ -13,7 +13,7 @@ import {
   siGithub,
 } from "simple-icons";
 
-import avatar from "@/assets/avatar.jpg";
+import avatar from "@/assets/avatar.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,7 +39,19 @@ export const Route = createFileRoute("/")({
 
 type BrandIcon = { path: string; hex: string };
 
-function BrandMark({ icon, className }: { icon: BrandIcon; className?: string }) {
+function BrandMark({ icon, name, className }: { icon: BrandIcon; name: string; className?: string }) {
+  if (name === "GitHub") {
+    return <svg viewBox="0 0 24 24" aria-hidden="true" className={`${className} text-accent`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7 7-5 5 5 5m10-10 5 5-5 5m-3-14-4 18" /></svg>;
+  }
+  if (name === "Letterboxd") {
+    return <svg viewBox="0 0 30 20" aria-hidden="true" className={className}><circle cx="8" cy="10" r="7" className="fill-letterboxd-orange" /><circle cx="15" cy="10" r="7" className="fill-letterboxd-green" /><circle cx="22" cy="10" r="7" className="fill-letterboxd-blue" /><path d="M11.5 3.94a7 7 0 0 1 0 12.12 7 7 0 0 1 0-12.12M18.5 3.94a7 7 0 0 1 0 12.12 7 7 0 0 1 0-12.12" className="fill-logo-light" /></svg>;
+  }
+  if (name === "TikTok") {
+    return <svg viewBox="-2 -2 28 28" aria-hidden="true" className={className}><path d={icon.path} transform="translate(-.8 -.5)" className="fill-tiktok-cyan" /><path d={icon.path} transform="translate(.8 .5)" className="fill-tiktok-red" /><path d={icon.path} className="fill-logo-light" /></svg>;
+  }
+  if (name === "Steam") {
+    return <svg viewBox="0 0 28 28" aria-hidden="true" className={className}><circle cx="14" cy="14" r="14" className="fill-steam-blue" /><path d={icon.path} transform="translate(2 2)" className="fill-logo-light" /></svg>;
+  }
   return (
     <svg
       viewBox="0 0 24 24"
@@ -66,41 +78,39 @@ type Section = {
   links: LinkItem[];
 };
 
-// TODO: replace the "#" URLs with your real profile links.
 const SECTIONS: Section[] = [
   {
     label: "01 — Build",
     delay: 200,
     links: [
-      { name: "GitHub", note: "Code, repos, experiments", url: "#", icon: siGithub },
-      { name: "Steam", note: "Library, achievements", url: "#", icon: siSteam },
-      { name: "Riot Games", note: "Ranked ladder", url: "#", icon: siRiotgames },
+      { name: "GitHub", note: "Code, repos, experiments", url: "https://github.com/Abido-tt", icon: siGithub },
+      { name: "Steam", note: "Library, achievements", url: "https://s.team/p/jtrw-bfkn/KDNVNTHJ", icon: siSteam },
     ],
   },
   {
     label: "02 — Play",
     delay: 300,
     links: [
-      { name: "Chess.com", note: "+700 Rabid Rating", url: "#", icon: siChessdotcom },
-      { name: "Discord", note: "communities", url: "#", icon: siDiscord },
+      { name: "Chess.com", note: "+700 Rabid Rating", url: "https://www.chess.com/member/Abidott", icon: siChessdotcom },
     ],
   },
   {
     label: "03 — Watch",
     delay: 400,
     links: [
-      { name: "Letterboxd", note: "Films watched", url: "#", icon: siLetterboxd },
-      { name: "Spotify", note: "Playlists, listening", url: "#", icon: siSpotify },
+      { name: "Letterboxd", note: "Films watched", url: "https://boxd.it/dOTTD", icon: siLetterboxd },
+      { name: "Spotify", note: "Playlists, listening", url: "https://open.spotify.com/user/31m36cont2a7s346sfncsxmmoexu", icon: siSpotify },
     ],
   },
   {
-    label: "04 — Follow",
+    label: "04 — Communication",
     delay: 500,
     links: [
-      { name: "Instagram", note: "Daily, stories", url: "#", icon: siInstagram },
-      { name: "TikTok", note: "Short clips", url: "#", icon: siTiktok },
-      { name: "Snapchat", note: "Snaps", url: "#", icon: siSnapchat },
-      { name: "Facebook", note: "Profile", url: "#", icon: siFacebook },
+      { name: "Instagram", note: "Daily, stories", url: "https://www.instagram.com/3ooo_tt", icon: siInstagram },
+      { name: "TikTok", note: "Short clips", url: "https://www.tiktok.com/@www.iamfuckingcrazy.com?_r=1", icon: siTiktok },
+      { name: "Snapchat", note: "Snaps", url: "https://www.snapchat.com/add/tt_3ooo?share_id=vMtMKiyDPaY&locale=en-EG", icon: siSnapchat },
+      { name: "Facebook", note: "Profile", url: "https://www.facebook.com/share/1Bst3kRjYP/", icon: siFacebook },
+      { name: "Discord", note: "communities", url: "https://discord.gg/xera6cWP", icon: siDiscord },
     ],
   },
 ];
@@ -122,7 +132,7 @@ function Index() {
           <div className="relative mx-auto size-28">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/50 via-indigo-400/30 to-transparent blur-md" />
             <img
-              src={avatar}
+              src={avatar.url}
               alt="Abd El-Rahman"
               width={112}
               height={112}
@@ -166,7 +176,7 @@ function Index() {
                   className="group flex items-center gap-3 rounded-2xl bg-glass/40 px-3 py-3 ring-1 ring-white/10 backdrop-blur-xl transition-colors duration-200 hover:bg-glass/70 hover:ring-accent/40"
                 >
                   <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-background/60 ring-1 ring-white/10">
-                    <BrandMark icon={link.icon} className="size-4.5" />
+                    <BrandMark icon={link.icon} name={link.name} className="size-4.5" />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-sm font-medium text-foreground">
