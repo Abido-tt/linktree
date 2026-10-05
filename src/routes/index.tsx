@@ -140,9 +140,9 @@ function Index() {
           </p>
           <div className="mt-4 flex items-center justify-center gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span className="text-accent">●</span>
-            <span>Cairo</span>
-            <span className="opacity-30">/</span>
-            <span>GMT+2</span>
+            <span>3OOO</span>
+            <span className="opacity-30"></span>
+            <span></span>
           </div>
         </header>
 
