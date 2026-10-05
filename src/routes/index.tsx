@@ -136,8 +136,7 @@ function Index() {
             Abd El-Rahman
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-pretty">
-            Web developer. Chess player. Cinema addict. Building things in the
-            dark, then watching them in the dark.
+            Web developer. Chess player. Cinema addict. Born to build
           </p>
           <div className="mt-4 flex items-center justify-center gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span className="text-accent">●</span>
