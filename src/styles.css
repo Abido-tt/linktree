@@ -32,6 +32,13 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-glass: var(--glass);
+  --color-letterboxd-orange: #ff8000;
+  --color-letterboxd-green: #00e054;
+  --color-letterboxd-blue: #40bcf4;
+  --color-tiktok-cyan: #25f4ee;
+  --color-tiktok-red: #fe2c55;
+  --color-steam-blue: #175b86;
+  --color-logo-light: #ffffff;
 }
 
 :root {
