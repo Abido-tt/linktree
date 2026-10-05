@@ -186,7 +186,6 @@ function Index() {
         ))}
 
         <footer className="animate-rise mt-10 border-t border-white/5 pt-5 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground [animation-delay:600ms]">
-          © 2026 Abd El-Rahman · made late at night · GMT+2
         </footer>
       </main>
     </div>
