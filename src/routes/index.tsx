@@ -81,15 +81,15 @@ const SECTIONS: Section[] = [
     label: "02 — Play",
     delay: 300,
     links: [
-      { name: "Chess.com", note: "Blitz, puzzles, ratings", url: "#", icon: siChessdotcom },
-      { name: "Discord", note: "Server, community", url: "#", icon: siDiscord },
+      { name: "Chess.com", note: "+700 Rabid Rating", url: "#", icon: siChessdotcom },
+      { name: "Discord", note: "communities", url: "#", icon: siDiscord },
     ],
   },
   {
     label: "03 — Watch",
     delay: 400,
     links: [
-      { name: "Letterboxd", note: "Films watched & ranked", url: "#", icon: siLetterboxd },
+      { name: "Letterboxd", note: "Films watched", url: "#", icon: siLetterboxd },
       { name: "Spotify", note: "Playlists, listening", url: "#", icon: siSpotify },
     ],
   },
@@ -99,8 +99,8 @@ const SECTIONS: Section[] = [
     links: [
       { name: "Instagram", note: "Daily, stories", url: "#", icon: siInstagram },
       { name: "TikTok", note: "Short clips", url: "#", icon: siTiktok },
-      { name: "Snapchat", note: "Snaps, streaks", url: "#", icon: siSnapchat },
-      { name: "Facebook", note: "Profile, groups", url: "#", icon: siFacebook },
+      { name: "Snapchat", note: "Snaps", url: "#", icon: siSnapchat },
+      { name: "Facebook", note: "Profile", url: "#", icon: siFacebook },
     ],
   },
 ];
@@ -136,14 +136,13 @@ function Index() {
             Abd El-Rahman
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-pretty">
-            Web developer. Chess player. Cinema addict. Building things in the
-            dark, then watching them in the dark.
+            Web developer. Chess player. Cinema addict. Born to build
           </p>
           <div className="mt-4 flex items-center justify-center gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span className="text-accent">●</span>
-            <span>Cairo</span>
-            <span className="opacity-30">/</span>
-            <span>GMT+2</span>
+            <span>3OOO</span>
+            <span className="opacity-30"></span>
+            <span></span>
           </div>
         </header>
 
@@ -187,7 +186,6 @@ function Index() {
         ))}
 
         <footer className="animate-rise mt-10 border-t border-white/5 pt-5 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground [animation-delay:600ms]">
-          © 2026 Abd El-Rahman · made late at night · GMT+2
         </footer>
       </main>
     </div>
