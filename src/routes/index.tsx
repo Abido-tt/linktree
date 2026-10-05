@@ -13,6 +13,7 @@ import {
 } from "simple-icons";
 
 import avatar from "@/assets/avatar.jpg.asset.json";
+import { IdentityDecor } from "@/components/identity-decor";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,7 +78,7 @@ type Section = {
   links: LinkItem[];
 };
 
-const SECTIONS: Section[] = [
+export const SECTIONS: Section[] = [
   {
     label: "01 — Build",
     delay: 200,
@@ -116,38 +117,32 @@ const SECTIONS: Section[] = [
 
 function Index() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      {/* Ambient background */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <div className="absolute -left-24 -top-24 size-[420px] rounded-full bg-sky-400/20 blur-[110px] animate-drift" />
-        <div className="absolute -right-28 top-1/3 size-[460px] rounded-full bg-indigo-500/20 blur-[120px] animate-drift [animation-delay:-6s]" />
-        <div className="absolute -bottom-32 left-1/4 size-[380px] rounded-full bg-cyan-300/15 blur-[110px] animate-drift [animation-delay:-11s]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_35%,var(--color-background)_100%)]" />
-      </div>
-
-      <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-5 py-16">
+    <div className="identity-page relative min-h-dvh overflow-clip bg-background text-foreground">
+      <div aria-hidden="true" className="identity-backdrop" />
+      <IdentityDecor />
+      <div className="identity-center relative mx-auto flex min-h-dvh max-w-xl flex-col px-5 py-12 sm:py-20">
         {/* Profile */}
         <header className="animate-rise text-center [animation-delay:60ms]">
           <div className="relative mx-auto size-28">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/50 via-indigo-400/30 to-transparent blur-md" />
+            <div className="identity-avatar-glow absolute inset-0 rounded-full" />
             <img
               src={avatar.url}
               alt="Abd El-Rahman"
               width={112}
               height={112}
-              className="relative size-28 rounded-full object-cover outline-1 -outline-offset-1 outline-white/15"
+              className="relative size-28 rounded-full object-cover outline-1 -outline-offset-1 outline-input"
             />
-            <span className="absolute -right-1 bottom-1 grid size-7 place-items-center rounded-full border border-white/10 bg-background/80 font-mono text-[11px] text-accent">
+            <span className="absolute -right-1 bottom-1 grid size-7 place-items-center rounded-full border border-border bg-background/80 font-mono text-[11px] text-accent">
               ♟
             </span>
           </div>
-          <h1 className="mt-5 font-display text-[2rem] font-bold leading-none tracking-tight text-balance">
+          <h1 className="mt-5 font-display text-[2rem] font-bold leading-tight text-balance">
             Abd El-Rahman
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-pretty">
             Web developer. Chess player. Cinema addict. Born to build
           </p>
-          <div className="mt-4 flex items-center justify-center gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          <div className="mt-4 flex items-center justify-center gap-3 font-mono text-[10px] uppercase text-muted-foreground">
             <span className="text-accent">●</span>
             <span>3OOO</span>
             <span className="opacity-30"></span>
@@ -162,9 +157,9 @@ function Index() {
             className="animate-rise mt-9"
             style={{ animationDelay: `${section.delay}ms` }}
           >
-            <p className="mb-3 px-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <h2 className="mb-3 px-1 font-mono text-[10px] font-normal uppercase text-muted-foreground">
               {section.label}
-            </p>
+            </h2>
             <div className="flex flex-col gap-2.5">
               {section.links.map((link) => (
                 <a
@@ -172,9 +167,9 @@ function Index() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl bg-glass/40 px-3 py-3 ring-1 ring-white/10 backdrop-blur-xl transition-colors duration-200 hover:bg-glass/70 hover:ring-accent/40"
+                  className="identity-link group grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-xl bg-glass/40 px-4 py-3.5 ring-1 ring-border backdrop-blur-xl transition-colors duration-200 hover:bg-glass/70 hover:ring-accent/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
                 >
-                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-background/60 ring-1 ring-white/10">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-background/60 ring-1 ring-border">
                     <BrandMark icon={link.icon} name={link.name} className="size-4.5" />
                   </span>
                   <span className="min-w-0 flex-1">
@@ -185,7 +180,7 @@ function Index() {
                       {link.note}
                     </span>
                   </span>
-                  <span className="font-mono text-xs text-muted-foreground transition-transform duration-200 group-hover:translate-x-1">
+                  <span aria-hidden="true" className="font-mono text-xs text-muted-foreground transition-transform duration-200 group-hover:translate-x-1">
                     ↗
                   </span>
                 </a>
@@ -194,9 +189,9 @@ function Index() {
           </section>
         ))}
 
-        <footer className="animate-rise mt-10 border-t border-white/5 pt-5 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground [animation-delay:600ms]">
+        <footer className="animate-rise mt-10 border-t border-border pt-5 text-center font-mono text-[10px] uppercase text-muted-foreground [animation-delay:600ms]">
         </footer>
-      </main>
+      </div>
     </div>
   );
 }
