@@ -99,8 +99,8 @@ const SECTIONS: Section[] = [
     links: [
       { name: "Instagram", note: "Daily, stories", url: "#", icon: siInstagram },
       { name: "TikTok", note: "Short clips", url: "#", icon: siTiktok },
-      { name: "Snapchat", note: "Snaps, streaks", url: "#", icon: siSnapchat },
-      { name: "Facebook", note: "Profile, groups", url: "#", icon: siFacebook },
+      { name: "Snapchat", note: "Snaps", url: "#", icon: siSnapchat },
+      { name: "Facebook", note: "Profile", url: "#", icon: siFacebook },
     ],
   },
 ];
