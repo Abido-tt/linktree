@@ -81,8 +81,8 @@ const SECTIONS: Section[] = [
     label: "02 — Play",
     delay: 300,
     links: [
-      { name: "Chess.com", note: "Blitz, puzzles, ratings", url: "#", icon: siChessdotcom },
-      { name: "Discord", note: "Server, community", url: "#", icon: siDiscord },
+      { name: "Chess.com", note: "+700 Rabid Rating", url: "#", icon: siChessdotcom },
+      { name: "Discord", note: "communities", url: "#", icon: siDiscord },
     ],
   },
   {
