@@ -89,7 +89,7 @@ const SECTIONS: Section[] = [
     label: "03 — Watch",
     delay: 400,
     links: [
-      { name: "Letterboxd", note: "Films watched & ranked", url: "#", icon: siLetterboxd },
+      { name: "Letterboxd", note: "Films watched", url: "#", icon: siLetterboxd },
       { name: "Spotify", note: "Playlists, listening", url: "#", icon: siSpotify },
     ],
   },
