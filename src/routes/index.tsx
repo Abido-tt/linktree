@@ -6,7 +6,6 @@ import {
   siInstagram,
   siTiktok,
   siChessdotcom,
-  siRiotgames,
   siSteam,
   siLetterboxd,
   siDiscord,
