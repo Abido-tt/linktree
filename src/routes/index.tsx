@@ -12,7 +12,6 @@ import {
   siGithub,
 } from "simple-icons";
 
-import avatar from "@/assets/avatar.jpg.asset.json";
 import { IdentityDecor } from "@/components/identity-decor";
 
 export const Route = createFileRoute("/")({
@@ -126,7 +125,7 @@ function Index() {
           <div className="relative mx-auto size-28">
             <div className="identity-avatar-glow absolute inset-0 rounded-full" />
             <img
-              src={avatar.url}
+              src="/phelosophy.jpg"
               alt="Abd El-Rahman"
               width={112}
               height={112}
